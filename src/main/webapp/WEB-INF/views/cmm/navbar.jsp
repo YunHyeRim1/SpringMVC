@@ -23,5 +23,5 @@
     </ul>
 </div>
 <script>
-navbar.init()
+common.goHome()
 </script>

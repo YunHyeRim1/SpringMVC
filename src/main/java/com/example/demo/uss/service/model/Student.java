@@ -18,5 +18,8 @@ create table students(
 	ssn varchar2(20),
 	reg_date varchar2(20),
 	tea_num int,
+	subject varchar2(20),
+	profile_image varchar2(100)
 	constraint students_fk foreign key(tea_num) references teachers(tea_num)
+	)
  */

@@ -10,7 +10,8 @@ public class Manager {
 }
 /*
 create table managers(
-	mgr_num varchar2(10) primary key,
+	mgr_num int primary key,
 	email varchar2(20),
 	password varchar2(20)
+	)
  */

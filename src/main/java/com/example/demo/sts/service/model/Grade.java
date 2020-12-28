@@ -15,5 +15,6 @@ create table grades(
 	score varchar2(20),
 	grade varchar2(20),
 	stu_num int,
- 	constraint students_fk foreign key(stu_num) references students(stu_num)
-*/
+	constraint grades_fk foreign key(stu_num) references students(stu_num)
+ 	)
+ */

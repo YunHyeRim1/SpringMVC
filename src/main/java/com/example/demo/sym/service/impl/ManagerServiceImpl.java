@@ -15,5 +15,4 @@ public class ManagerServiceImpl implements ManagerService {
     public int register(Manager manager) {
         return managerMapper.insert(manager);
     }
-
 }

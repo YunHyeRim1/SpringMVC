@@ -14,4 +14,5 @@ create table replies(
 	content varchar2(20),
 	art_num int,
 	constraint replies_fk foreign key(art_num) references articles(art_num)
+	)
  */
