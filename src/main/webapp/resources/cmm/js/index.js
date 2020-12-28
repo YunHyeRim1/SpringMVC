@@ -19,9 +19,9 @@ cmm = (()=>{
 var wow = wow || {}
 wow = (()=>{
 	const init = () =>{
-	$('#icon1').html(`<img src="https://tbc.imgdl.xcache.kinxcdn.com/cdn001/20191015/23596706_1016feature7.jpg" alt="">`)
-      $('#icon2').html(`<img src="https://img.insight.co.kr/static/2020/03/20/700/24801sd871usm6ez98lv.jpg" alt="">`)
-      $('#icon3').html(`<img src="https://lh3.googleusercontent.com/proxy/qq97fRaQ7vchnMrCZG_DdOt5SYGb01VbPv30CR9P5uqIVYu-qAvzOELcdbl-ivJap7RHX2OLUVRjDN5AX9JdKh7m5M1ezS90-g457rpfWjZRFkIQFsP9qscwhjt62oWMmhVhV9rnJ8JrWa2bPpCTw01I6QIGF5jSpRbW1Gza03-45GAFo3Kyusc4I-KhY5PFkyqjXWnPZZqsYlrpZhb3qQwgd3YWk1tW8rHjUAJKdaYNVGqmIKkfV8JQhmduZtFKbFfb-sQN8X1auwIx32VsCjhvINoWS7wdIcY0AGfsj1oEKhuyfZDsz9Uv" alt="">`)
+		$(`#icon1`).html(`<img src="https://sports.chosun.com/news/html/2020/12/21/2020122201001587800097571.jpg" alt="">`)
+		$(`#icon2`).html(`<img src="https://polinews.co.kr/data/photos/tjtune/20191016/art_15712025418192.jpg" alt="">`)
+		$(`#icon3`).html(`<img src="https://file.osen.co.kr/article/2020/12/16/202012161723774940_5fd9c76858065.jpg" alt="">`)
 	}
 	return {init}
 })()
