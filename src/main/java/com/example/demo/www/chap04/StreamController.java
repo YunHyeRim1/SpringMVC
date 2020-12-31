@@ -23,7 +23,7 @@ public class StreamController extends Util{
 		 Stream<String> s = names.stream();
 		 s.forEach(System.out::println);
 		 // 스트림은 한 번 만 소비할 수 있으므로 아래 행의 주석을 제거하면 IllegalStateException이 발생
-		 //s.forEach(System.out::println);
+		 // s.forEach(System.out::println);
 		 List<Dish> menu = Arrays.asList(
 			      new Dish("pork", false, 800, Type.MEAT),
 			      new Dish("beef", false, 700, Type.MEAT),
@@ -35,7 +35,8 @@ public class StreamController extends Util{
 			      new Dish("prawns", false, 400, Type.FISH),
 			      new Dish("salmon", false, 450, Type.FISH)
 		);
-		
+		menu.stream()
+		.map(Dish::toString).forEach(System.out::println);
 	}
 }
 
