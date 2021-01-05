@@ -18,14 +18,14 @@ public class FilteringService {
         .filter(Dish::isVegetarian)
         .collect(toList());
   }
-  public List<Integer> filterByOddNumber(){
+  public List<Integer> filterByOddNumber() {
 	  // 고유 요소로 거름
 	    return Arrays.asList(1, 2, 1, 3, 3, 2, 4).stream()
 	        .filter(i -> i % 2 == 0)
 	        .distinct().collect(Collectors.toList())
 	       ;
   }
-  public List<Dish> filterByCalories(){
+  public List<Dish> filterByCalories() {
 	// 스트림 슬라이스
 	    // 칼로리 값을 기준으로 리스트를 오름차순 정렬!
 	    return Arrays.asList(
@@ -39,7 +39,7 @@ public class FilteringService {
 	    		.collect(toList());
 	  
   }
-  public List<Dish> myTakeWhile(){
+  public List<Dish> myTakeWhile() {
 	  System.out.println("Sorted menu sliced with takeWhile():");
 	    return Arrays.asList(
 		        new Dish("season fruit", true, 120, Dish.Type.OTHER),
@@ -52,7 +52,7 @@ public class FilteringService {
 	        .collect(toList());
 	    
   }
-  public List<Dish> myDropWhile(){
+  public List<Dish> myDropWhile() {
 	  System.out.println("Sorted menu sliced with dropWhile():");
 	    return Arrays.asList(
 		        new Dish("season fruit", true, 120, Dish.Type.OTHER),
@@ -65,7 +65,7 @@ public class FilteringService {
 	        .collect(toList());
   }
   
-  public List<Dish> mySkip(){
+  public List<Dish> mySkip() {
 	  // 요소 생략
 	    return Arrays.asList(
 		        new Dish("season fruit", true, 120, Dish.Type.OTHER),

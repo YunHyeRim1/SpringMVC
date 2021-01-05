@@ -1,8 +1,11 @@
 package com.example.demo.sym.service;
 
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 /*
 create table managers(
    mgr_num int primary key ,
@@ -10,8 +13,7 @@ create table managers(
    password varchar2(20)
    )
  */
-@Data
-@Component
+@Component @Data @AllArgsConstructor @Lazy @NoArgsConstructor
 public class Manager {
     private String mgrNum, email, password;
 }
