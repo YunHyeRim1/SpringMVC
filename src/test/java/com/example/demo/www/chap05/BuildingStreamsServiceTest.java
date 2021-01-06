@@ -24,13 +24,13 @@ class BuildingStreamsServiceTest {
 	}
 
 	@Test
-	void testMyFinonacci() {
-		assertTrue(asList().equals(bs.myFinonacci()));
+	void testMyFibonacci() {
+		assertTrue(asList().equals(bs.myFibonacci()));
 	}
 
 	@Test
-	void testMyFinonacci2() {
-		assertTrue(asList().equals(bs.myFinonacci2()));
+	void testMyFibonacci2() {
+		assertTrue(asList().equals(bs.myFibonacci2()));
 	}
 
 }
