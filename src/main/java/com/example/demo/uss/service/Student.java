@@ -11,7 +11,7 @@ import lombok.Setter;
 
 @Component @Data @AllArgsConstructor @Lazy @NoArgsConstructor
 public class Student {
-    private String stuNum, userid, password, name, ssn, regDate, subject, profileImage;
+    private String stuNum, userid, password, name, birthday, gender, regDate, subject, profileImage;
 }
 /*
 create table students(

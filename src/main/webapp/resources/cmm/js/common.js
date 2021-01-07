@@ -10,10 +10,9 @@ common = (()=>{
 		$(`#stu-join`).click(e => {location.href = `${ctx}/user/register`})
 		$(`#stu-login`).click(e => {location.href = `${ctx}/user/login`})
 		$(`#blog_default`).click(e => {location.href = `${ctx}/content/bbs/index`})
-		$(`#icon1`).html(`<img src="https://sports.chosun.com/news/html/2020/12/21/2020122201001587800097571.jpg" alt="">`)
-		$(`#icon2`).html(`<img src="https://polinews.co.kr/data/photos/tjtune/20191016/art_15712025418192.jpg" alt="">`)
-		$(`#icon3`).html(`<img src="https://file.osen.co.kr/article/2020/12/16/202012161723774940_5fd9c76858065.jpg" alt="">`)
-
+		$(`#icon1`).html(`<img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">`)
+		$(`#icon2`).html(`<img src="http://lavinephotography.com.au/wp-content/uploads/2017/01/PROFILE-Photography-112.jpg" alt="">`)
+		$(`#icon3`).html(`<img src="http://lavinephotography.com.au/wp-content/uploads/2017/01/PROFILE-Photography-107.jpg" alt="">`)
 		$(`#title`).text(`원어민 어학 사이트`)
 		$(`#message`).text(`화상강의솔루션, 스카이프 등을 이용하여 필리핀등 원어민 강사와 \n
 							한국 학생간에 회화 교육을 하는 사이트 구축.`)
@@ -30,7 +29,7 @@ common = (()=>{
 				alert(`${j.id}`)
 			})
 		})
-		let mgr_arr = [{id:'sign-up', val: '관리자등록', url:'/admin/mgr/register'}, 
+		let mgr_arr = [{id:'sigin-up', val: '관리자등록', url:'/admin/mgr/register'}, 
 		{id:'sign-in', val: '관리자접속', url: `${ctx}/admin/mgr/access`},
 		{id:'c', val: 'c'},
 		{id:'d', val: 'd'},
@@ -64,7 +63,7 @@ common = (()=>{
 				location.href = j.url
 			})
 		})
-	
+		
 	}
 	const goHome = () => {
 		$(`#goHome`).click(e => {
