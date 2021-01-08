@@ -29,7 +29,7 @@ public class HomeController {
     	session.setAttribute("cmm", ctx+"/resources/cmm");
     	session.setAttribute("mgr", ctx+"/resources/sym/mgr");
     	session.setAttribute("tea", ctx+"/resources/sym/tea");
-    	session.setAttribute("uss", ctx+"/resources/uss");
+    	session.setAttribute("stu", ctx+"/resources/uss");
     	
         logger.info("Project Initialized ... ");
         
@@ -62,7 +62,7 @@ public class HomeController {
         return String.format("mgr:%s", page);
     }
     /*
-     * cop (Content Operator) 디렉토리 이동시 content 사용
+     * cop (Content Operater) 디렉토리 이동시 content 사용
      * */
     @GetMapping("/content/{dir}/{page}") 
     public String content(@PathVariable String dir, 
