@@ -152,7 +152,7 @@ public class DummyGenerator {
 	}
 	
 	public Student makeStudent() {
-		return new Student("",
+		return new Student(0,
 				makeUserid(), 
 				"1", 
 				makeUsername(), 
