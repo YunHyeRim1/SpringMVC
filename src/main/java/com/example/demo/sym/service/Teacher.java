@@ -10,7 +10,14 @@ import lombok.NoArgsConstructor;
 @Component @Data @AllArgsConstructor @Lazy @NoArgsConstructor
 public class Teacher {
     private String teaNum, name, email, password, subject, profileImage;
-
+    
+    public Teacher(String name, String email, String password, String subject, String profileImage) {
+    	this.name = name;
+    	this.email = email;
+    	this.password = password;
+    	this.subject = subject;
+    	this.profileImage = profileImage;
+    }
 }
 /*
 create table teachers(

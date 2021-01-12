@@ -71,11 +71,11 @@ stu.list = x => {
 			 (i, j) => {
 				$(`<a/>`)
 					.attr({href: `#`})
-					.css({backgroundColor: (j != page.pageNum) ? `White` : `LightBlue`})
+					.css({backgroundColor: (j != page.pageNum) ? `White` : `CadetBlue`})
 					.text(`${j}`)
 					.appendTo(`#stu_page`)
-					.click(e=>{
-						e.preventDefault()
+					.click(e=>{ 
+						e.preventDefault() 
 						$(`#mgr-data-mgt-stu`).empty()
 						stu.list({ctx: x.ctx, pageSize: `10`, pageNum: j})
 					})
