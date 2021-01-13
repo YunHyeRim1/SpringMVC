@@ -135,6 +135,12 @@ public class DummyGenerator {
 		return ls.get(0);
 	}
 	
+	public int makeSubNum() {
+		List<Integer> ls = Arrays.asList(1,2,3,4,5);
+		 Collections.shuffle(ls);
+		 return ls.get(0);
+	}
+	
 	public String makeEmail() {
 		List<String> ls = Arrays.asList("@test.com","@gmail.com","@naver.com");
 		Collections.shuffle(ls);
@@ -142,15 +148,14 @@ public class DummyGenerator {
 	}
 	
 	public Student makeStudent() {
-		return new Student(0,
-				makeUserid(), 
+		return new Student(makeUserid(), 
 				"1", 
 				makeUsername(), 
 				makeBirthday(), 
 				makeGender(),
 				makeRegdate(),
-				makeSubject(),
-				Path.DEFAULT_PROFILE.toString()
+				Path.DEFAULT_PROFILE.toString(),
+				1
 				);
 	}
 	
@@ -164,8 +169,8 @@ public class DummyGenerator {
 				.map(i -> (int)(i * 100)).collect(Collectors.toList());
 	}
 	
-	public Grade makeGrade() {
-		return new Grade(makeSubject(), makeExamdate(), makeScore().get(0));
+	public Grade makeGrade(int stuNum, int subNum) {
+		return new Grade(stuNum, subNum, makeExamdate(), makeScore().get(0));
 	}
 	
 	/*********************************
@@ -173,12 +178,12 @@ public class DummyGenerator {
 	 ********************************* 
 	 */
 	public Teacher makeTeacher() {
-		return new Teacher("", 
+		return new Teacher(
 				makeUsername(), 
 				makeEmail(), 
 				"1", 
-				"", 
-				Path.DEFAULT_PROFILE.toString()
+				Path.DEFAULT_PROFILE.toString(),
+				makeSubNum()
 				);
 	}
 	

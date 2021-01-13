@@ -3,9 +3,7 @@ var stu = stu || {}
 stu.insertMany = x => {
 	$.getJSON(`${x}/students/insert-many/${$('#stu-data-count').val()}`, 
 			d => { location.reload();})}
-stu.truncate = x => {
-	$.getJSON(`${x}/students/truncate`,
-	 		d => { location.reload()})}
+
 stu.count = x => {
 	$.getJSON(`${x}/students/count`, 
 			d => { $(`#stu-count`).text(d)})}
@@ -21,10 +19,10 @@ stu.list = x => {
 		.appendTo(`#title`) 
 		$(`<tr/>`).attr({id: `tr_1`}).appendTo(`#tab`)
 		$.each(
-			[`No`,`아이디`,`이름`,`생년월일`,`성별`,`등록일`,`전공과목`], 
+			[`No`,`아이디`,`이름`,`생년월일`,`성별`,`등록일`,`담당매니저`], 
 			(i,j) => {
-			$(`<th>${j}</th>`).css({backgroundColor: `CadetBlue`, fontSize: `small`})
-			.appendTo(`#tr_1`) 
+			$(`<th>${j}</th>`).css({backgroundColor: `MediumPurple`, fontSize: `small`})
+			.appendTo(`#tr_1`)
 		})
 		$.each(d.list, 
 			(i, j) => {
@@ -34,7 +32,7 @@ stu.list = x => {
 						<td>${j.birthday}</td>
 						<td>${j.gender}</td>
 						<td>${j.regDate}</td>
-						<td>${j.subject}</td></tr>`)
+						<td>${j.mgrNum}</td></tr>`)
 						.css({padding: `15px`, textAlign: `left`, fontSize: `small`})
 						.appendTo(`#tab`)
 		})
@@ -71,11 +69,11 @@ stu.list = x => {
 			 (i, j) => {
 				$(`<a/>`)
 					.attr({href: `#`})
-					.css({backgroundColor: (j != page.pageNum) ? `White` : `CadetBlue`})
+					.css({backgroundColor: (j != page.pageNum) ? `White` : `Lavender`})
 					.text(`${j}`)
 					.appendTo(`#stu_page`)
-					.click(e=>{ 
-						e.preventDefault() 
+					.click(e=>{
+						e.preventDefault()
 						$(`#mgr-data-mgt-stu`).empty()
 						stu.list({ctx: x.ctx, pageSize: `10`, pageNum: j})
 					})
@@ -94,7 +92,6 @@ stu.list = x => {
 		}
 	})
 }
-
 
 
 

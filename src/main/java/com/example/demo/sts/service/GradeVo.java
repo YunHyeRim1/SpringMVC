@@ -14,7 +14,7 @@ public class GradeVo {
     // Subject
 	private String description;
 	// Teacher
-	private String teaName, email, teaPassword, teaProfileImage;
+	private String teaName, teaEmail, teaPassword, teaProfileImage;
 	// Student
 	private String userid, stuPassword, stuName, birthday, gender, regDate, stuProfileImage;
 
