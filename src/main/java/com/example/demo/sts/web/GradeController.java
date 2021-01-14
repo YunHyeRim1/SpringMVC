@@ -63,10 +63,10 @@ public class GradeController {
     public Messenger register(@RequestBody Grade g) {
         return gradeMapper.insert(g)==1?Messenger.SUCCESS:Messenger.FAILURE;
     }
-
+   
     @GetMapping("/register")
     public Messenger registerMany() {
-    	logger.info("Grade List Execute ...");
+    	logger.info("Grade List Register ...");
     	gradeService.insertMany();
     	var map = new HashMap<String, Object>();
     	map.put("TOTAL_COUNT", Sql.TOTAL_COUNT.toString() + Table.GRADES);	
