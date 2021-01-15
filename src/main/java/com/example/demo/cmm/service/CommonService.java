@@ -9,10 +9,14 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.cmm.enm.Sql;
+import com.example.demo.cmm.utl.Box;
+import com.example.demo.cmm.utl.Vector;
 
 @Service
 public class CommonService {
 	@Autowired CommonMapper commonMapper;
+	@Autowired Box<String> bx;
+	@Autowired Vector<String> vc;
 	
 	@Transactional
 	public int generateDB() {
@@ -46,18 +50,16 @@ public class CommonService {
 			commonMapper.createTable(map);
 			map.clear();
 		}
-		map.put("TABLE_COUNT", Sql.TABLE_COUNT.toString());
+		bx.put("TABLE_COUNT", Sql.TABLE_COUNT.toString());
 		
 		
 		
 		return (commonMapper.tableCount(map)!=0) ? 1: 0;
 	}
 	public int totalCount() {
-		var map = new HashMap<String,String>();
 		return 0;
 	}
 	public int dropTable() {
-		var map = new HashMap<String,String>();
 		return 0;
 	}
 	

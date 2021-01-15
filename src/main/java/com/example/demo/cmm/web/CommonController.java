@@ -7,6 +7,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.example.demo.cmm.enm.Messenger;
 import com.example.demo.cmm.service.CommonService;
+import static com.example.demo.cmm.utl.Util.*;
+import static java.util.stream.Collectors.*;
 
 @RestController @RequestMapping("/common")
 public class CommonController {

@@ -9,6 +9,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import static com.example.demo.cmm.utl.Util.*;
+import static java.util.stream.Collectors.*;
+import com.example.demo.cmm.utl.Vector;
 
 @Service
 public class GradeService {
@@ -25,7 +28,7 @@ public class GradeService {
 		}
     }
 	
-	public List<GradeVo> selectAllforExam(String examDate){
+	public Vector<GradeVo> selectAllforExam(String examDate) {
 		return gradeMapper.selectJoinAll(examDate);
 	}
 }

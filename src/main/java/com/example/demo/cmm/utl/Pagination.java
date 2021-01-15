@@ -4,6 +4,8 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import static com.example.demo.cmm.utl.Util.*;
+import static java.util.stream.Collectors.*;
 
 @Component("page") @Data @Lazy @NoArgsConstructor
 public class Pagination {

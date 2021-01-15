@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.cmm.utl.DummyGenerator;
 import com.example.demo.sts.service.Grade;
+import static com.example.demo.cmm.utl.Util.*;
+import static java.util.stream.Collectors.*;
 
 @Service
 public class ManagerService {

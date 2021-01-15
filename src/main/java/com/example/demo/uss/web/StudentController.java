@@ -6,6 +6,7 @@ import com.example.demo.cmm.enm.Messenger;
 import com.example.demo.cmm.enm.Sql;
 import com.example.demo.cmm.enm.Table;
 import com.example.demo.cmm.service.CommonMapper;
+import com.example.demo.cmm.utl.Box;
 import com.example.demo.cmm.utl.Pagination;
 import com.example.demo.cmm.utl.Util;
 import com.example.demo.sts.service.GradeService;
@@ -40,6 +41,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import static com.example.demo.cmm.utl.Util.*;
+import static java.util.stream.Collectors.*;
 
 @RestController
 @RequestMapping("/students")
@@ -53,6 +56,7 @@ public class StudentController {
     @Autowired ManagerService managerService;
     @Autowired CommonMapper commonMapper;
     @Autowired Pagination page;
+    @Autowired Box<String> bx;
     @PostMapping("")
     public Messenger register(@RequestBody Student s){
         return studentMapper.insert(s)==1?Messenger.SUCCESS:Messenger.FAILURE;
@@ -71,11 +75,11 @@ public class StudentController {
         return studentMapper.selectById(userid);
     }
     */
-    @GetMapping("/page/{pageSize}/{pageNum}")
+    @GetMapping("/list/{pageSize}/{pageNum}")
     public Map<?,?> list(@PathVariable String pageSize, 
     					@PathVariable String pageNum){
     	logger.info("Students List Execute ...");
-    	var map = new HashMap<String, Object>();
+    	var map = new HashMap<String,String>();
     	map.put("TOTAL_COUNT", Sql.TOTAL_COUNT.toString() + Table.STUDENTS);	
     	var page = new Pagination(
 				Table.STUDENTS.toString(), 
@@ -83,16 +87,16 @@ public class StudentController {
 				integer.apply(pageNum),
 				commonMapper.totalCount(map))
 				;
-    	map.clear();
-    	map.put("list", studentService.list(page));
-    	map.put("page", page);
-        return map;
+    	var map2 = new HashMap<String, Object>();
+    	map2.put("list", studentService.list(page));
+    	map2.put("page", page);
+        return map2;
     }
     @GetMapping("/page/{pageSize}/{pageNum}/selectAll")
     public List<?> selectAll(@PathVariable String pageSize, 
     					@PathVariable String pageNum){
     	logger.info("Students List Execute ...");
-    	var map = new HashMap<String, Object>();
+    	var map = new HashMap<String,String>();
     	map.put("TOTAL_COUNT", Sql.TOTAL_COUNT.toString() + Table.STUDENTS);	
         return studentMapper.selectAll(new Pagination(
 				Table.STUDENTS.toString(), 
@@ -114,14 +118,14 @@ public class StudentController {
     @GetMapping("/insert-many/{count}")
     public String insertMany(@PathVariable String count) {
     	logger.info(String.format("Insert %s Students ...",count));
-    	var map = new HashMap<String, Object>();
+    	var map = new HashMap<String,String>();
     	map.put("TOTAL_COUNT", Sql.TOTAL_COUNT.toString() + Table.STUDENTS);
     	if(commonMapper.totalCount(map) == 0) {
     		managerService.insertMany(1);
-    		subjectService.insertMany(5);
-    		studentService.insertMany(Integer.parseInt(count));
-    		teacherService.insertMany(5);
-    		//gradeService.insertMany(Integer.parseInt(count));
+        	subjectService.insertMany(5);
+        	studentService.insertMany(Integer.parseInt(count));
+        	teacherService.insertMany(5);
+        	//gradeService.insertMany(Integer.parseInt(count)); 나중에 추가함
     	}
     	map.clear();
     	map.put("TOTAL_COUNT", Sql.TOTAL_COUNT.toString() + Table.STUDENTS);
@@ -130,7 +134,7 @@ public class StudentController {
     @GetMapping("/count")
     public String count() {
     	logger.info(String.format("Count Students ..."));
-    	var map = new HashMap<String, Object>();
+    	var map = new HashMap<String,String>();
     	map.put("TOTAL_COUNT", Sql.TOTAL_COUNT.toString() + Table.STUDENTS);	
     	return string.apply(commonMapper.totalCount(map));
     }

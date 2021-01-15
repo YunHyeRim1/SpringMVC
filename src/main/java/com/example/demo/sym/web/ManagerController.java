@@ -14,6 +14,8 @@ import com.example.demo.cmm.enm.Messenger;
 import com.example.demo.sym.service.Manager;
 import com.example.demo.sym.service.ManagerMapper;
 import com.example.demo.sym.service.ManagerService;
+import static com.example.demo.cmm.utl.Util.*;
+import static java.util.stream.Collectors.*;
 
 @RestController
 @RequestMapping("/managers")

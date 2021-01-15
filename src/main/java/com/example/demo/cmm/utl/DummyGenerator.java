@@ -16,6 +16,7 @@ import com.example.demo.sym.service.Teacher;
 import com.example.demo.uss.service.Student;
 
 import static com.example.demo.cmm.utl.Util.*;
+import static java.util.stream.Collectors.*;
 
 @Service("dummy")
 public class DummyGenerator {
