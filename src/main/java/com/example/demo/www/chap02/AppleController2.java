@@ -7,13 +7,12 @@ import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
-import com.example.demo.cmm.utl.Util;
+import static com.example.demo.dwh.domain.Util.*;
 import static java.util.Comparator.comparing;
-import static com.example.demo.cmm.utl.Util.*;
 import static java.util.stream.Collectors.toList;
 import lombok.Data;
 
-public class AppleController2 {	
+public class AppleController2{	
 	public static void main(String... args) {
 		List<Apple> ls = Arrays.asList(
 				new Apple[]{new Apple(80, Color.GREEN),
@@ -21,27 +20,20 @@ public class AppleController2 {
 						new Apple(100, Color.RED),
 						new Apple(110, Color.RED),
 						new Apple(120, Color.RED)});
+	
 		
-
 		ls.stream()
 		.map(Apple::toString)
 		.limit(3)
 		.collect(toList()).forEach(System.out::println);
 		
-	
 		
-		// Stream<String> s2 = s.map(Apple::toString);
-		// s2.forEach(System.out::println);
 		
-		/*
-		for(Apple a : ls) {
-			System.out.println(a.toString());
-		}
-		System.out.println();
-		// 선언형
-		Stream<String> s = ls2.stream();
-		s.forEach(System.out::print);
-		*/
 		
-	}
+
+		
+		
+		//Stream<String> s = ls2.stream();
+		//s.forEach(System.out::print);
+	}		
 }

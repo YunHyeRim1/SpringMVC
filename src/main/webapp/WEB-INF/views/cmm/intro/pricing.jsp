@@ -61,6 +61,7 @@
         <div class="panel-footer">
           <button id="mgr-join-btn" class="btn btn-lg">Sign Up</button>
           <button id="mgr-login-btn" class="btn btn-lg">Sign In</button>
+          <button id="file-upload-btn" class="btn btn-lg">파일업로드</button>
         </div>
       </div>      
     </div>    
@@ -68,9 +69,13 @@
 </div>
 <script>
 $(`#mgr-login-btn`).click(function(){
-	location.href = `${ctx}/admin/mgr/access`
+	location.href = `${ctx}/auth/mgr/login`
 })
 $(`#tea-login-btn`).click(function(){
-	location.href = `${ctx}/admin/tea/access`
+	location.href = `${ctx}/auth/tea/login`
+})
+$(`#file-upload-btn`).click(function(){
+	alert('>>>')
+	location.href = `${ctx}/fileupload`
 })
 </script>
